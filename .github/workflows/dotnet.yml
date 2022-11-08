@@ -21,6 +21,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Install browsers
-      run: pwsh bin/Debug/net6.0/playwright.ps1 install ${{ matrix.browser }}
+      run: pwsh bin/Debug/net6.0/playwright.ps1 install ${{ matrix.browser }} --with-deps
     - name: Test
       run: dotnet test --no-build --verbosity normal -- Playwright.BrowserName=${{ matrix.browser }}
